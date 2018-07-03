@@ -1,0 +1,124 @@
+.educ-conteneur{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.contenaire-toolbar {
+
+
+}
+.toolbar{
+
+}
+
+.educ-side-container {
+  flex: 1 0 auto;
+}
+.side-content{
+
+}
+.texte:hover{
+  color:#A94442;
+}
+
+.sidenavBar{
+  display: flex;
+}
+.menubar{
+
+}
+.principal{
+  display: flex;
+  flex-direction: column;
+
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.box{
+  width: 200px;
+  margin: auto;
+  align-content: center;
+
+}
+.formation{
+  background-color:#888888;
+}
+.accueil{
+  align-content: flex-end;
+}
+.invite{
+
+
+}
+
+
+
+.nlist{
+  width: 200px;
+
+}
+
+.nav-li{
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+.nav{
+  flex: 1;
+
+}
+recherche-contenaire {
+  display: flex;
+  flex-direction: column;
+}
+
+.recherche-contenaire > * {
+  width: 100%;
+}
+.example-is-mobile  {
+  position: fixed;
+
+  z-index: 2;
+}
+.example-is-mobile  {
+
+  flex: 1 0 auto;
+}
+.searche-icon {
+  padding: 4 14px;
+}
+
+.searche-spacer {
+  flex: 4 1 auto;
+}
+.boutton {
+  flex: 1 1 auto;
+}
+.toolRow{
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  margin-top: 10px;
+}
+.petit{
+  width: 100px;
+  height: 50px;
+}
+.connecteButton{
+  background-color:darkorange;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  color: blanchedalmond;
+  font-family: monospace;
+  font-size: 1em;
+  padding: 10px;
+
+}

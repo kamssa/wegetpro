@@ -1,0 +1,46 @@
+.contenaire-base{
+  display: flex;
+  height: 300px;
+  justify-content: space-around;
+
+
+}
+.box-1{
+  display: flex;
+  width: 500px;
+  height: 100px;
+  margin: auto;
+  justify-content: baseline;
+  flex-direction: column;
+
+
+
+}
+.box-2{
+  width: 400px;
+  height: 300px;
+  margin: auto;
+}
+.boutonGoogle {
+  line-height: 48px;
+  background-color:cornflowerblue;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  color: blanchedalmond;
+  font-family: monospace;
+  font-size: 1em;
+  padding: 10px;
+
+}
+.boutonface{
+line-height: 48px;
+  background-color:coral;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  color: blanchedalmond;
+  font-family: monospace;
+  font-size: 1em;
+  padding: 10px;
+}

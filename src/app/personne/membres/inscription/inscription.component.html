@@ -1,0 +1,85 @@
+<div>
+  <mat-toolbar>
+    <span>Inscription</span>
+  </mat-toolbar>
+</div>
+<div *ngIf="mode==1">
+  <span>
+    <strong> Bad Credential...</strong>
+  </span>
+
+</div>
+<div class="contenaire-base">
+<div class="box-1">
+  <button mat-raised-button color="accent" class="boutonGoogle"> S'INSCRIRE AVEC UN COMPTE GOOGLE</button>
+
+  <button mat-raised-button color="accent" class="boutonface">S'INSCRIRE AVEC UN COMPTE FACEBOOK</button>
+</div>
+  <div class="box-2">
+<mat-sidenav-container>
+
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title> S'enregistrer</mat-card-title>
+            <mat-card-subtitle>pour être un(e) membre</mat-card-subtitle>
+          </mat-card-header>
+          <form [formGroup]="membresForm" (ngSubmit)="onSubmit()" novalidate *ngIf="membresForm">
+
+            <table>
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="Nom" formControlName="nom">
+                  </mat-form-field>
+                </td>
+                </tr>
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="Prenom" formControlName="prenom">
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+
+                  <div><mat-form-field>
+                    <input matInput placeholder="Email" formControlName="login">
+                  </mat-form-field>
+                  </div>
+
+              </tr>
+              <tr>
+                <td>
+
+                  <mat-form-field>
+                    <input matInput placeholder="Mot de passe" formControlName="password">
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <input matInput placeholder="Confirmer le Mot de passe" formControlName="password">
+                  </mat-form-field>
+                </td>
+              </tr>
+
+            </table>
+
+
+
+            <div>
+              <button mat-raised-button color="primary" type="submit" matTooltip="enregistrer" matTooltipPosition="before"> Enregistrer</button>
+              <button mat-raised-button color="accent" type="button" matTooltip="annuler l'enregistrement" matTooltipPosition="before" (click)="annuler()">Annuler</button>
+            </div>
+
+
+          </form>
+        </mat-card>
+
+
+  </mat-sidenav-container>
+  </div>
+</div>
+
+

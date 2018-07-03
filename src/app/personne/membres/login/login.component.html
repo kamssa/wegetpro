@@ -1,0 +1,63 @@
+<div>
+  <mat-toolbar>
+    <span>Connection</span>
+  </mat-toolbar>
+</div>
+<div *ngIf="mode==1">
+  <span>
+    <strong> Bad Credential...</strong>
+  </span>
+
+</div>
+<div class="contenaire-base">
+  <div class="box-1">
+   <button mat-raised-button color="accent" class="boutonGoogle"> SE CONNECTER AVEC UN COMPTE GOOGLE</button>
+
+   <button mat-raised-button color="accent" class="boutonface">SE CONNECTER AVEC UN COMPTE FACEBOOK</button>
+  </div>
+  <div class="box-2">
+<mat-sidenav-container>
+
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title> S'enregistrer</mat-card-title>
+          <mat-card-subtitle>pour être un(e) membre</mat-card-subtitle>
+        </mat-card-header>
+        <form [formGroup]="membresForm" (ngSubmit)="onSubmit()" novalidate *ngIf="membresForm">
+
+          <table>
+
+            <tr>
+
+              <div><mat-form-field>
+                <input matInput placeholder="Adresse email ou nom d'utilisateur " formControlName="login">
+              </mat-form-field>
+              </div>
+
+            </tr>
+            <tr>
+              <td>
+
+                <mat-form-field>
+                  <input matInput placeholder="Mot de passe" formControlName="password">
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+          <div>
+            <button mat-raised-button color="primary" type="submit" matTooltip="connecter vous" matTooltipPosition="before"> Connexion</button>
+          </div>
+
+
+        </form>
+      </mat-card>
+
+
+</mat-sidenav-container>
+    <span><strong>Pas encore membre ? Inscrivez-vous gratuitement en 210s.</strong></span>
+  </div>
+</div>
+
+
+

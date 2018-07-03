@@ -1,0 +1,127 @@
+<mat-sidenav-container>
+  <div>
+    <div class="">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title> S'enregistrer</mat-card-title>
+          <mat-card-subtitle>pour être un(e) membre</mat-card-subtitle>
+        </mat-card-header>
+        <form [formGroup]="membresForm" (ngSubmit)="onSubmit()" novalidate *ngIf="membresForm">
+          <mat-form-field>
+            <mat-select placeholder="titre" formControlName="titre">
+              <mat-option *ngFor="let t of titres" [value]=t.name>
+                {{t.libelle}}
+              </mat-option>
+
+            </mat-select>
+
+          </mat-form-field>
+          <table>
+            <tr>
+              <td>
+                <mat-form-field>
+                  <input matInput placeholder="Nom" formControlName="nom">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field>
+                  <input matInput placeholder="Prenom" formControlName="prenom">
+                </mat-form-field>
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field>
+                  <input matInput placeholder="Adresse " formControlName="login">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field>
+                  <input matInput placeholder="Mot de passe" formControlName="password">
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+
+          <div formGroupName="adresse">
+            <mat-expansion-panel matTooltip="les adresses" matTooltipPosition="above">
+              <mat-expansion-panel-header>
+                <mat-panel-title>Adresse </mat-panel-title>
+                <mat-panel-description>Entrer les Adresses</mat-panel-description>
+              </mat-expansion-panel-header>
+              <div>
+                <mat-form-field>
+                  <input matInput placeholder="Code Postal" formControlName="codePostal">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Quartier" formControlName="quartier">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Ville" formControlName="ville">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Pays" formControlName="pays">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Email" formControlName="email">
+                </mat-form-field>
+              </div>
+            </mat-expansion-panel>
+          </div>
+          <hr>
+          <div>
+            <mat-expansion-panel matTooltip="Contactcts telephoniques" matTooltipPosition="before">
+              <mat-expansion-panel-header>
+                <mat-panel-title>Les contacts</mat-panel-title>
+                <mat-panel-description>Saisir les contacts</mat-panel-description>
+              </mat-expansion-panel-header>
+              <div formArrayName="telephones">
+                <div *ngFor="let tel of membresForm.get('telephones').controls; let i = index;">
+                  <mat-panel-title>
+                    <mat-action-row>
+                      Telephone #{{i+1}}
+                    </mat-action-row>
+                    <mat-action-row>
+                      <button type="button" mat-mini-fab color="warn" (click)="removeTephone(i)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </mat-action-row>
+                  </mat-panel-title>
+                  <div [formGroupName]="i">
+                    <mat-action-row>
+                      <mat-form-field>
+                        <mat-select placeholder="type" formControlName="type">
+                          <mat-option *ngFor="let t of typeTelephones" [value]=t.name>
+                            {{t.libelle}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <mat-form-field>
+                        <input matInput placeholder="Entrer le numero" formControlName="numero">
+                      </mat-form-field>
+                    </mat-action-row>
+                  </div>
+                </div>
+                <mat-action-row>
+                  <button mat-raised-button color="warn" type="button" (click)="ajouTelephone()"
+                          matTooltip="ajout telephone" matTooltipPosition="above">Ajout Telephone
+                  </button>
+                </mat-action-row>
+              </div>
+            </mat-expansion-panel>
+          </div>
+          <hr>
+          <div>
+            <button mat-raised-button color="primary" type="submit" matTooltip="enregistrer" matTooltipPosition="before"> Enregistrer</button>
+            <button mat-raised-button color="accent" type="button" matTooltip="annuler l'enregistrement" matTooltipPosition="before" (click)="annuler()">Annuler</button>
+          </div>
+          <hr>
+
+        </form>
+      </mat-card>
+    </div>
+  </div>
+
+</mat-sidenav-container>
+
